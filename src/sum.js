@@ -1,10 +1,30 @@
-/** Adds two given numbers, returning the sum.
- * @param {number} a
- * @param {number} b
- * @returns {number} the sum of a and b
- */
-function sum(a, b) {
-    return a + b;
-}
+/** Takes a number N and returns an array containing the numbers from 1 to N, with the following exceptions: multiples of 3 return "Fizz", 5 return "Buzz", 3&5 return "FizzBuzz"
 
-export { sum };
+ * @param {number} n
+ * @returns {any[]} 
+ */
+
+
+
+const generateFizzbuzz = (n) => {
+let result = [];
+for(let i = 1; i <= n; i++){
+
+    if(i % 15 === 0){
+        result.push("FizzBuzz")
+
+    } else if(i % 3 === 0){
+        result.push("Fizz")
+
+    } else if(i % 5 === 0){
+        result.push("Buzz")
+
+    } else result.push(i)
+    }
+    return result;
+    }
+
+const total = generateFizzbuzz(15)
+console.log("our result is ", total)
+
+export { generateFizzbuzz };

@@ -1,12 +1,20 @@
-import { sum } from "./sum.js";
+import { generateFizzbuzz } from "./sum.js";
 
 // jest docs for expect "matchers"
 // https://jestjs.io/docs/expect
 
-test("adds 1 + 2 to equal 3", () => {
-    expect(sum(1, 2)).toBe(3);
+test("test n = 3 ", () => {
+    expect(generateFizzbuzz(3)).toEqual([1, 2, "Fizz"]);
 });
 
-test("adds 10 + 20 to equal 30", () => {
-    expect(sum(10, 20)).toBe(30);
+test("test n = 5 ", () => {
+    expect(generateFizzbuzz(5)).toEqual([1, 2, "Fizz", 4, "Buzz"]);
+});
+
+test("test n = 15 ", () => {
+    expect(generateFizzbuzz(15)).toEqual([1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"]);
+});
+
+test("test n = 0 ", () => {
+    expect(generateFizzbuzz(0)).toEqual([]);
 });
